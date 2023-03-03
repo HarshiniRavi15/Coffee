@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="web.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <title>Coffee Shop</title>
+</head>
+<body>
+    <script>
+        let rate=50;
+        function total()
+        {   
+            let delvchrg=20;
+            let i=document.formm.t4.value;
+            let tot= (rate*i)+delvchrg;
+            document.formm.t6.value=tot;
+        }
+        function val()
+        {
+            if(document.formm.t1.value=="")
+            {
+              alert("Enter correct name");
+            }
+            if(document.formm.t2.value=="")
+            {
+              alert("Enter valid E-Mail");
+            }
+            if(document.formm.t3.value=="")
+            {
+              alert("Enter proper mobile number");
+            }
+            if(document.formm.coffee.value=="EMPTY")
+            {
+              alert("Select something in the dropdown");
+            }
+            if(document.formm.t4.value=="")
+            {
+              alert("Enter the number of cups");
+            }
+            if(document.formm.t5.value=="")
+            {
+              alert("Enter the address so that we can deliver u :)");
+            } 
+        }
+    </script>
+    
+    <nav class="navi">
+        <ul>
+            <li><a href="#"><i class="fa-solid fa-house"></i> HOME</a></li>
+            <li><a href="menu.html"><i class="fa-solid fa-bars"></i> MENU</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> CONTACT</a></li>
+            <li><a href="#"><i class="fa-solid fa-user"></i>  ABOUT US</a></li>
+            <li class="lif"><a href="form.html"><i class="fa-solid fa-basket-shopping"></i> ORDER NOW</a></li>             
+        </ul>
+    </nav>
+        <center>
+            <div class="formm">
+        <form action="connect.php" method="POST" name="formm">
+            <br><br>
+           ENTER YOUR NAME:<input type="text" name="t1" value=""><br><br><br>
+           E-MAIL:<input type="text" id="email" name="t2" value=""><br><br><br>
+           MOBILE NUMBER  :<input type="text" name="t3" value=""><br><br><br>
+           TYPE OF COFFEE :<select name="coffee" id="coffee">
+            <option value="EMPTY">--- </option>
+            <option value="COLD COFFEE">COLD COFFEE </option>
+            <option value="CAPPUCCINO">CAPPUCCINO</option>
+            <option value="DALGONA">DALGONA</option>
+            <option value="FILTER COFFEE">FILTER COFFEE</option>
+            <option value="MOCHA">MOCHA</option>
+            <option value="FLAT WHITE">FLAT WHITE</option>
+            <option value="ESPRESSO">ESPRESSO</option>
+            <option value="LATTE">LATTE</option>
+            <option value="CAFE AU LAIT">CAFE AU LAIT</option>
+          </select><br><br><br>
+          NO OF CUPS      :<input type="text" name="t4" ><br><br><br>
+          ADDRESS         :<input type="text" name="t5" ><br><br><br>
+          TOTAL           :<input type="text" name="t6" onclick="total()"><br><br><br>
+          <input type ="button" onclick="val()" value="Check"><br><br><br>
+          <input type="submit"  name="order" value="order">
+        </form>
+        </div>
+        </center>
+        </body>
+        </html>
